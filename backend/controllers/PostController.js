@@ -47,7 +47,7 @@ export const getOne = async (req, res) => {
       {
         new: true,
       },
-    );
+    ).populate('user');
 
     if (!post) {
       return res.status(404).json({ message: 'Статья не найдена' });
